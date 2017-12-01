@@ -1,0 +1,24 @@
+{
+  "name": "offline-news",
+  "version": "1.0.0",
+  "description": "A app to read latest news offline from different sources.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sauravmawandia/OfflineNews.git"
+  },
+  "author": "saurav <saurav@nyu.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sauravmawandia/OfflineNews/issues"
+  },
+  "homepage": "https://github.com/sauravmawandia/OfflineNews#readme",
+  "dependencies": {
+    "http": "0.0.0",
+    "mongodb": "^2.2.33",
+    "request": "^2.83.0"
+  }
+}
