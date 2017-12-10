@@ -1,0 +1,20 @@
+{
+  "name": "get-news-lambda",
+  "version": "1.0.0",
+  "description": "get news from source",
+  "main": "getNewsLambda.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "news"
+  ],
+  "author": "saurav <saurav@nyu.edu>",
+  "license": "ISC",
+  "dependencies": {
+    "amazon-cognito-identity-js": "^1.28.0",
+    "aws-sdk": "^2.167.0",
+    "elasticsearch": "^14.0.0",
+    "http-aws-es": "^4.0.0"
+  }
+}
