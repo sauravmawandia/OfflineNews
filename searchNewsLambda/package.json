@@ -1,0 +1,16 @@
+{
+  "name": "search-news-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "searchNews.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "saurav <saurav@nyu.edu>",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.167.0",
+    "elasticsearch": "^14.0.0",
+    "http-aws-es": "^4.0.0"
+  }
+}

@@ -59,7 +59,9 @@ exports.handler = (event, context, callback) => {
           response.id=allRecords[i]._id;
           response.imageURL=allRecords[i]._source.imageURL;
           response.description=allRecords[i]._source.description;
-          arr.push(response);
+          if(!(response.title==null||response.publishedAt==null||response.id==null||response.description==null)){
+              arr.push(response);
+          }
         }
         var nw={news:arr};
         console.log(nw);
