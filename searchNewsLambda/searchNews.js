@@ -30,7 +30,7 @@ client.search({
           multi_match: {
             query: event.searchKey,
             type:'best_fields',
-            fields: ['title^15','nlp^10','text^2'],
+            fields: ['title^2','nlp^2','text^1'],
           }
         }],
         filter:{
@@ -41,7 +41,8 @@ client.search({
           }
         }
       }
-    }
+    },
+    sort: { publishedAt: { order: "desc"}}
   }
 },function getMoreUntilDone(error, response) {
   console.log(response);
@@ -64,7 +65,7 @@ client.search({
       for (var i = 0, len = allRecords.length; i < len; i++) {
         var response={};
         response.title=allRecords[i]._source.title;
-        response.publishedAt=allRecords[i]._source.publishedAt;
+        response.publishedAt=new Date(allRecords[i]._source.publishedAt).toString().split(' GMT')[0];
         response.id=allRecords[i]._id;
         response.imageURL=allRecords[i]._source.imageURL;
         response.description=allRecords[i]._source.description;

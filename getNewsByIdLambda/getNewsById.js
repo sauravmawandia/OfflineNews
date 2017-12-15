@@ -30,7 +30,7 @@ client.search({
   var hits = resp.hits.hits[0 ];
   var response={};
   response.text=hits._source.Text;
-  response.publishedAt=hits._source.publishedAt;
+  response.publishedAt=new Date(hits._source.publishedAt).toString().split(' GMT')[0];
   response.id=hits._id;
   response.imageURL=hits._source.imageURL;
   response.title=hits._source.title;

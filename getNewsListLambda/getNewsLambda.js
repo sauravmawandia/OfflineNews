@@ -33,7 +33,8 @@ exports.handler = (event, context, callback) => {
             }
           }
         }
-      }
+      },
+      sort: { publishedAt: { order: "desc"}}
     }
   },function getMoreUntilDone(error, response) {
     if(error){
@@ -55,7 +56,7 @@ exports.handler = (event, context, callback) => {
         for (var i = 0, len = allRecords.length; i < len; i++) {
           var response={};
           response.title=allRecords[i]._source.title;
-          response.publishedAt=allRecords[i]._source.publishedAt;
+          response.publishedAt=new Date(allRecords[i]._source.publishedAt).toString().split(' GMT')[0];
           response.id=allRecords[i]._id;
           response.imageURL=allRecords[i]._source.imageURL;
           response.description=allRecords[i]._source.description;
